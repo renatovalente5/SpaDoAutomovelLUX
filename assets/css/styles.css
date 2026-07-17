@@ -99,8 +99,8 @@ a:hover { color: var(--gold-bright); }
 }
 .site-header.is-scrolled .site-header__inner { height: 64px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; position: relative; z-index: 2; }
-.brand img { height: 82px; width: auto; transition: height .25s ease; }
-.site-header.is-scrolled .brand img { height: 42px; }
+.brand img { height: 92px; width: auto; transition: height .25s ease; }
+.site-header.is-scrolled .brand img { height: 44px; }
 ::selection { background: var(--gold); color: #131006; }
 
 .nav__links {
@@ -227,31 +227,34 @@ a:hover { color: var(--gold-bright); }
 
 /* ---------- Serviços (compacto) ---------- */
 .services-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
   list-style: none; margin: 0; padding: 0;
 }
 .service-card {
-  display: flex; align-items: center; gap: 14px;
-  background: var(--bg-elev-2);
+  display: flex; flex-direction: column; gap: 16px;
+  background: linear-gradient(158deg, var(--bg-elev-2), var(--bg-elev));
   border: 1px solid var(--hairline-soft);
   border-radius: var(--radius);
-  padding: 16px 18px;
-  transition: transform .18s ease, border-color .18s ease;
+  padding: 30px 26px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 @media (hover: hover) {
-  .service-card:hover { transform: translateY(-3px); border-color: var(--hairline); }
+  .service-card:hover { transform: translateY(-4px); border-color: var(--hairline); box-shadow: 0 18px 42px rgba(0, 0, 0, .5); }
+  .service-card:hover .service-card__icon { background: var(--grad-gold); color: #1a1204; border-color: transparent; }
   .btn--gold:hover { transform: translateY(-2px); }
   .gallery a:hover img { transform: scale(1.04); opacity: .92; }
 }
 .service-card__icon {
   flex: none;
-  width: 44px; height: 44px; border-radius: 11px;
+  width: 56px; height: 56px; border-radius: 15px;
   display: grid; place-items: center;
-  background: rgba(212, 175, 55, .1);
+  background: rgba(200, 146, 76, .12);
   border: 1px solid var(--hairline-soft);
   color: var(--gold);
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
 }
-.service-card h3 { font-size: .99rem; margin: 0; font-weight: 600; line-height: 1.3; }
+.service-card h3 { font-family: var(--font-display); font-size: 1.18rem; margin: 0; font-weight: 600; line-height: 1.25; letter-spacing: .01em; }
+.service-card p { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.55; }
 .services-toggle-wrap { display: none; text-align: center; margin-top: 20px; }
 
 /* ---------- Antes / Depois ---------- */
@@ -477,7 +480,7 @@ html:not(.js) .map-consent .btn { display: none; }
   display: grid; grid-template-columns: 1.3fr 1fr;
   gap: 44px; margin-bottom: 32px; align-items: start;
 }
-.site-footer .logo-foot { height: 74px; width: auto; }
+.site-footer .logo-foot { height: 92px; width: auto; }
 .site-footer__brand p {
   color: var(--muted); font-size: .95rem; line-height: 1.6;
   max-width: 44ch; margin: 16px 0 0;
@@ -592,8 +595,8 @@ html:not(.js) .map-consent .btn { display: none; }
   .legal-page td { border-top: none; margin-bottom: 10px; }
   .hero { min-height: 86vh; padding-bottom: 72px; }
   .hero__bg img { object-position: 60% 58%; }
-  .services-grid { grid-template-columns: 1fr; gap: 10px; }
-  .service-card { padding: 12px 16px; }
+  .services-grid { grid-template-columns: 1fr; gap: 14px; }
+  .service-card { padding: 24px 22px; }
   /* "Ver mais serviços": colapsa a lista em telemóvel (só com JS) */
   html.js .services-grid.is-collapsed li:nth-child(n+7) { display: none; }
   html.js .services-toggle-wrap { display: block; }
